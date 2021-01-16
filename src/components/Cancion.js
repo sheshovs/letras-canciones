@@ -5,11 +5,12 @@ const Cancion = ({ letra, cancion, guardarCancion }) => {
     if (cancion.length === 0) return;
 
     const Capitalize = (palabra) => {
-      return palabra[0].toUpperCase() + palabra.slice(1);
+      let minuscula = palabra.toLowerCase();
+      return minuscula[0].toUpperCase() + minuscula.slice(1);
     };
 
     guardarCancion(Capitalize(cancion));
-  }, [cancion]);
+  }, [cancion, guardarCancion]);
 
   if (letra.length === 0) {
     return null;
